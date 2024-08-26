@@ -104,5 +104,29 @@ echo $buku1->getJudul();: Memanggil metode getJudul() pada objek $buku1 untuk me
 
 
 ## Inheritance
+### Kelas Produk
+![image](https://github.com/user-attachments/assets/dd2fb6c4-2db7-4909-a8bc-25fdf2d07323)
+
+protected $nama: Atribut $nama memiliki visibilitas protected, artinya atribut ini dapat diakses oleh kelas Produk sendiri dan kelas turunannya (seperti Buku).
+__construct($nama): Konstruktor kelas Produk menerima parameter $nama dan menginisialisasi atribut $nama dari objek.
+getNama(): Metode getter untuk mendapatkan nilai dari atribut $nama.
+
+
+### Kelas Buku
+![image](https://github.com/user-attachments/assets/3cdd4e8d-1753-49bb-889c-c9310a073615)
+
+extends Produk: Menyatakan bahwa kelas Buku mewarisi dari kelas Produk.
+private $penulis: Atribut $penulis hanya dapat diakses di dalam kelas Buku sendiri.
+__construct($nama, $penulis): Konstruktor kelas Buku menerima dua parameter, $nama dan $penulis. Ia memanggil konstruktor induk (parent::__construct($nama)) untuk menginisialisasi atribut $nama yang diwarisi dari kelas Produk, kemudian menginisialisasi atribut $penulis milik kelas Buku sendiri.
+getPenulis(): Metode getter untuk mendapatkan nilai dari atribut $penulis.
+
+
+### Membuat Objek dan Mengaksesnya
+![image](https://github.com/user-attachments/assets/ad02d1dc-b7c2-471b-9095-78a5cb9bb38d)
+
+$buku1 = new Buku("Pemrograman PHP", "Andi Prasetyo");: Membuat objek baru dari kelas Buku dengan judul "Pemrograman PHP" dan penulis "Andi Prasetyo".
+echo $buku1->getNama();: Memanggil metode getNama() pada objek $buku1 untuk mendapatkan nilai judul buku (yang diwarisi dari kelas Produk) dan kemudian mencetaknya ke layar.
+
+
 
 
