@@ -152,3 +152,37 @@ Function: Metode ini digunakan untuk menampilkan data mahasiswa dalam bentuk str
 ### Membuat Objek dan Mengaksesnya
 $mahasiswa1 = new Mahasiswa(...): Membuat objek baru dari kelas Mahasiswa dengan nama "Eval", NIM "23020202009", dan jurusan "Jurusan Komputer dan Bisnis". Objek ini disimpan dalam variabel $mahasiswa1.
 echo $mahasiswa1->tampilkanData();: Memanggil metode tampilkanData() pada objek $mahasiswa1 untuk menampilkan data mahasiswa ke layar.
+
+### Hasil
+
+![image](https://github.com/user-attachments/assets/c1d160c7-69b5-47d9-b6d3-171f90711a8e)
+
+
+## Encapsulation
+### Definisi Kelas
+class Mahasiswa: Mendefinisikan sebuah kelas baru dengan nama Mahasiswa. Kelas ini menjadi blueprint atau cetak biru untuk membuat objek-objek yang merepresentasikan data mahasiswa.
+
+### Atribut (Properties)
+private $nama, private $nim, private $jurusan: Atribut-atribut ini memiliki visibilitas private. Artinya, atribut ini hanya dapat diakses dari dalam kelas Mahasiswa itu sendiri.
+
+### Constructor
+__construct(): Metode khusus yang secara otomatis dipanggil ketika objek Mahasiswa baru dibuat.
+Parameter:
+$nama: Nilai yang akan diberikan kepada atribut $nama.
+$nim: Nilai yang akan diberikan kepada atribut $nim.
+$jurusan: Nilai yang akan diberikan kepada atribut $jurusan.
+Function: Menginisialisasi objek Mahasiswa dengan nilai-nilai yang diberikan saat objek dibuat.
+
+### Method getter & setter
+getNama(), getNim(), getJurusan(): Metode-metode ini adalah getter yang digunakan untuk mendapatkan nilai dari atribut-atribut yang sesuai.
+setNama(), setNim(), setJurusan(): Metode-metode ini adalah setter yang digunakan untuk mengubah nilai dari atribut-atribut yang sesuai.
+
+###  Membuat Objek dan Mengaksesnya
+$mahasiswa1 = new Mahasiswa(...): Membuat objek baru dari kelas Mahasiswa dengan nama "Eval", NIM "230202009", dan jurusan "Komputer dan Bisnis". Objek ini disimpan dalam variabel $mahasiswa1.
+echo $mahasiswa1->getNama();: Memanggil metode getNama() pada objek $mahasiswa1 untuk mendapatkan nilai nama mahasiswa dan kemudian mencetaknya ke layar.
+
+### Hasil
+![image](https://github.com/user-attachments/assets/0a4ffcca-2629-4cdc-acf4-121cf42520e5)
+
+
+
