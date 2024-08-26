@@ -128,5 +128,27 @@ $buku1 = new Buku("Pemrograman PHP", "Andi Prasetyo");: Membuat objek baru dari 
 echo $buku1->getNama();: Memanggil metode getNama() pada objek $buku1 untuk mendapatkan nilai judul buku (yang diwarisi dari kelas Produk) dan kemudian mencetaknya ke layar.
 
 
+# Jobsheet
+## Class & Object
+### Class 
+class Mahasiswa: Mendefinisikan sebuah kelas baru dengan nama Mahasiswa. Kelas ini menjadi blueprint atau cetak biru untuk membuat objek-objek yang merepresentasikan data mahasiswa.
 
+### Atribut (Properties)
+$nama: Atribut publik yang digunakan untuk menyimpan nama mahasiswa.
+$nim: Atribut publik yang digunakan untuk menyimpan Nomor Induk Mahasiswa.
+$jurusan: Atribut publik yang digunakan untuk menyimpan jurusan mahasiswa.
 
+### Constructor
+__construct(): Metode khusus yang secara otomatis dipanggil ketika objek Mahasiswa baru dibuat.
+Parameter:
+$nama: Nilai yang akan diberikan kepada atribut $nama.
+$nim: Nilai yang akan diberikan kepada atribut $nim.
+$jurusan: Nilai yang akan diberikan kepada atribut $jurusan.
+Function: Menginisialisasi objek Mahasiswa dengan nilai-nilai yang diberikan saat objek dibuat.
+
+### Method 
+Function: Metode ini digunakan untuk menampilkan data mahasiswa dalam bentuk string.
+
+### Membuat Objek dan Mengaksesnya
+$mahasiswa1 = new Mahasiswa(...): Membuat objek baru dari kelas Mahasiswa dengan nama "Eval", NIM "23020202009", dan jurusan "Jurusan Komputer dan Bisnis". Objek ini disimpan dalam variabel $mahasiswa1.
+echo $mahasiswa1->tampilkanData();: Memanggil metode tampilkanData() pada objek $mahasiswa1 untuk menampilkan data mahasiswa ke layar.
