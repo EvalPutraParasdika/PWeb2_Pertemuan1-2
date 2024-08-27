@@ -1,4 +1,4 @@
-﻿# Dokumentasi Projek Pertemuan 1 dan 2
+﻿# Dokumentasi Projek Pertemuan 3 dan 4
 
 ## Pendahuluan
 Object-Oriented Programming (OOP) adalah paradigma pemrograman yang
@@ -314,3 +314,147 @@ Function aksesFitur(): mengoverride metode akses fitur dari parent untuk diisi "
 ### Hasil
 ![image](https://github.com/user-attachments/assets/f1cb8148-d2c5-4180-8621-8706456856fe)
 
+
+#  Dokumentasi Projek Pertemuan 1 dan 2
+## Pendahuluan
+Penggunaan kelas dan objek adalah inti dari pemrograman berorientasi objek
+(OOP). Dalam PHP, kelas digunakan untuk mendefinisikan struktur dan perilaku objek,
+sedangkan objek adalah instansiasi dari kelas tersebut. Dengan memanfaatkan kelas
+dan objek, kode dapat diorganisir dengan lebih baik, lebih mudah dipelihara, dan dapat
+digunakan kembali.
+
+## Materi Pokok 
+## Kelas dan Objek dalam PHP
+### Kelas
+• Struktur atau blueprint yang mendefinisikan atribut dan metode yang dimiliki oleh objek. <br>
+• Atribut atau properties adalah variabel yang menyimpan data untuk objek.<br>
+• Metode adalah fungsi yang ditentukan dalam kelas yang dapat dipanggil oleh objek.<br>
+### Objek (Object)
+• Instansiasi dari kelas.<br>
+• Memiliki akses ke atribut dan metode yang didefinisikan dalam kelas.
+
+### Contoh coding :
+```php
+<?php 
+// definisi kelas
+class mobil {
+  //atribut atau properties
+  public $merk;
+  public $warna;
+
+  public function __construct($merk, $warna) {
+    $this->merk = $merk;
+    $this->warna = $warna;
+  } 
+
+  //metode atau function
+  public function deskripsi() {
+    return "Mobil ini adalah $this->merk berwarna $this->warna";
+  }
+}
+
+// instansiasi objek
+$mobil1= new mobil("Toyota", "HItam");
+echo $mobil1->deskripsi();
+?>
+```
+
+### Penjelasan:
+• Class Mobil: Kelas ini memiliki dua atribut (merk dan warna) dan satu metode (deskripsi). <br>
+• Object: $mobil1 adalah objek yang merupakan instance dari kelas Mobil. Metode deskripsi() digunakan untuk menampilkan informasi tentang objek tersebut.
+### Hasil
+![image](https://github.com/user-attachments/assets/dc77b6d3-1d1b-416b-9560-56516845754d)
+
+## Atribut & Metode
+- Atribut: Menyimpan data atau keadaan dari objek. <br>
+- Metode: Operasi atau fungsi yang dilakukan oleh objek.
+
+### Contoh coding:
+```php
+<?php 
+// menambah atribut dan metode
+class Buku {
+  //atribut atau properties
+  public $judul;
+  public $penulis;
+
+  public function __construct($judul, $penulis) {
+    $this->judul = $judul;
+    $this->penulis = $penulis;
+  } 
+
+  //metode atau function
+  public function deskripsi() {
+    return "Buku : $this->judul, ditulis oleh $this->penulis";
+  }
+}
+
+// instansiasi objek
+$buku1= new Buku("Pemrograman PHP", "John Doe");
+echo $buku1->deskripsi();
+?>
+```
+### Aksesibilitas
+• Public: Dapat diakses dari mana saja.<br>
+• Private: Hanya dapat diakses dalam kelas itu sendiri.<br>
+• Protected: Dapat diakses oleh kelas itu sendiri dan kelas turunan.
+### Hasil
+![image](https://github.com/user-attachments/assets/0fe2ba05-9867-4380-9102-8b391b427b05)
+
+## Jobsheet 1
+### Class & Properties
+Mendefinisikan kelas bernama Mahasiswa yang memiliki properties $nama, $nim, $jurusan
+```php
+class Mahasiswa {
+  // properties
+  public $nama; //properties untuk menyimpan nama 
+  public $nim; //properties untuk menyimpan nim
+  public $jurusan; //properties untuk menyimpan nama jurusan
+```
+### Constructor
+Konstruktor ini akan dipanggil secara otomatis untuk menginisialisasi nilai properti $nama, $nim, dan $jurusan dari objek tersebut Saat membuat objek baru dari kelas Mahasiswa
+```php
+  public function __construct($nama,$nim,$jurusan) {
+    $this->nama = $nama; //properties ini akan diisi value dari parameter $nama
+    $this->nim = $nim; //properties ini akan diisi value dari parameter $nim
+    $this->jurusan = $jurusan; //properties ini akan diisi value dari parameter $jurusan
+  }
+```
+
+## Method
+Method ini digunakan untuk menampilkan data mahasiswa
+```php
+ public function tampildata() {
+   //mengembalikan string berupa data mahasiswa
+    return "Nama : $this->nama" . "<br>" . "NIM : $this->nim" . "<br>" . "Jurusan : $this->jurusan" . "<hr>";  
+  }
+```
+Method ini digunakan untuk mengubah nilai properti $jurusan menjadi nilai baru yang diberikan sebagai parameter.
+```php
+public function updateJurusan($jurusanBaru) {
+    //properties ini akan diisi dengan nilai dari parameter $jurusan
+    $this->jurusan = $jurusanBaru;
+  }
+```
+Method ini digunakan untuk mengubah nilai properti $nim menjadi nilai baru yang diberikan sebagai parameter.
+```php
+  public function setNim($nim) {
+    //properties ini akan diisi dengan nilai dari parameter $nim
+    return $this->nim =$nim; 
+  }
+```
+### Membuat Objek dan Mengaksesnya
+Membuat objek baru dari kelas Mahasiswa dengan nama "Eval", nip "230202009" dan jurusan "Komputer dan Bisnis". Objek ini disimpan di dalam variabel $mahasiswa1
+```php
+$mahasiswa1 = new Mahasiswa("Eval", "230202009", "Komputer dan Bisnis"); //membuat objek baru dari kelas mahasiswa
+echo $mahasiswa1->tampildata(); //memamnggil method tampildata dari objek mahasiswa yang dibuat sebagai objek $mahasiswa1 
+
+$mahasiswa1->updateJurusan("Rekayasa Agama"); //memamnggil method updateJurusan dari objek mahasiswa yang dibuat sebagai objek $mahasiswa1
+$mahasiswa1->setNim("223344"); //memamnggil method setNim dari objek mahasiswa yang dibuat sebagai objek $mahasiswa1
+echo $mahasiswa1->tampildata(); //memamnggil method tampildata dari objek mahasiswa yang dibuat sebagai objek $mahasiswa1
+```
+### Hasil
+![image](https://github.com/user-attachments/assets/c1f745c8-b58c-4d4b-bf82-7a1936f4f11e)
+
+
+## Tugas
