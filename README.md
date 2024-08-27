@@ -1,6 +1,5 @@
 ﻿# Dokumentasi Projek
-﻿Pertemuan1-2
-﻿Praktikum_Web2
+﻿# Pertemuan1-2 ﻿Praktikum_Web2
 
 ## Pendahuluan
 Object-Oriented Programming (OOP) adalah paradigma pemrograman yang
