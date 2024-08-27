@@ -211,5 +211,106 @@ echo $mahasiswa1->getNama();: Memanggil metode getNama() pada objek $mahasiswa1 
 ### Hasil
 ![image](https://github.com/user-attachments/assets/0a4ffcca-2629-4cdc-acf4-121cf42520e5)
 
+## Inheritance
+### Definisi Kelas
+![image](https://github.com/user-attachments/assets/c0132fe0-6175-49d1-9037-18e7dd4add81)
 
+Mendefinisikan class Pengguna sebagai parent untuk kelas turunannya
+
+### Atribut (Properties)
+![image](https://github.com/user-attachments/assets/bab4a76a-89e4-485c-8cd5-a3f98363ef25)
+
+protected $nama: Menyimpan nama pengguna
+
+### Constructor
+![image](https://github.com/user-attachments/assets/9c52a668-d49b-4fbe-85c0-cc02e468f0f4)
+
+__construct($nama): Konstruktor untuk menginisialisasi objek Pengguna dengan nama yang diberikan.
+
+### Method
+![image](https://github.com/user-attachments/assets/be8b4353-465d-48a2-90d8-b9f7e912d64e)
+
+getNama(): Metode untuk mendapatkan nilai nama pengguna.
+
+### Class Dosen
+![image](https://github.com/user-attachments/assets/7ab9867c-3564-4a58-8614-2dfa19831e4d)
+
+Mendefinisikan kelas Dosen yang merupakan kelas turunan dari kelas Pengguna 
+
+### Properties
+![image](https://github.com/user-attachments/assets/9ae96249-455f-4ab1-a957-4d5b8498b691)
+
+private $mataKuliah: Menyimpan nama mata kuliah.
+
+### Constructor
+![image](https://github.com/user-attachments/assets/2021dd97-9d82-47ba-af8c-fe05b65774b7)
+
+__construct($nama, $mataKuliah): Konstruktor untuk menginisialisasi objek Dosen dengan nama dan mata kuliah yang diberikan. Memanggil konstruktor induk (parent::__construct($nama)) untuk menginisialisasi property $nama.
+
+### Method
+![image](https://github.com/user-attachments/assets/6bdb440a-fd6d-4628-b471-b31e36b20ab1)
+
+getMataKuliah(): Metode untuk mendapatkan nilai mata kuliah yang diajar oleh dosen.
+
+### Membuat Objek dan Mengaksesnya
+![image](https://github.com/user-attachments/assets/27d75b7a-e5a2-4ee6-a625-8049bd173e5f)
+
+$dosen1 = new Dosen("Eval Kece", "Alpro"): Membuat objek baru dari kelas Dosen dengan nama "Eval Kece" dan mata kuliah "Alpro". Objek disimpan di dalam variabel $dosen1
+echo "Nama : " . $dosen1->getNama(): Memanggil metode getNama() pada objek $dosen1 untuk mendapatkan nilai nama dosen (yang diwarisi dari kelas Pengguna) dan kemudian mencetaknya ke layar
+echo "Mata Kuliah : " . $dosen1->getMataKuliah(): Memanggil metode getMataKuliah() pada objek $dosen1 dan mencetaknya ke layar
+
+### Hasil
+![image](https://github.com/user-attachments/assets/11ccb78d-d48c-4894-973c-8d5449f70ff3)
+
+
+## Polymorphism
+### Kelas Pengguna dan Method
+![image](https://github.com/user-attachments/assets/9ce1e61b-c074-4ef0-8d44-12ae5c612410)
+
+Mendefinisikan kelas Pengguna sebagai parent untuk kelas turunan selanjutnya
+Function aksesFitur(): Metode untuk mencetak "Lu adalah pengguna".
+
+### Kelas Dosen dan Method
+![image](https://github.com/user-attachments/assets/6397448b-5067-42a8-97dd-4ce82ed22d53)
+
+Mendefinisikan kelas Dosen yang merupakan turunan dari kelas Pengguna
+Function aksesFitur(): Mengoverride pesan di metode aksesFitur() dari parent menjadi "Lu adalah dosen".
+
+### Kelas Mahasiswa dan Method
+![image](https://github.com/user-attachments/assets/1ea3fb37-2a42-43c4-8c49-c3cd648b53d2)
+
+Mendefinisikan kelas Mahasiswa yang merupakan turunan dari kelas Pengguna
+Function aksesFitur(): Mengoverride pesan di metode aksesFitur() dari parent menjadi "Lu adalah mahasiswa".
+
+### Membuat Objek dan Mengaksesnya
+![image](https://github.com/user-attachments/assets/f33d5079-5a4b-4e99-a5ee-fe37adfe0497)
+
+Membuat 3 objek baru (Pengguna, Dosen, Mahasiswa) yang semuanya disimpan dalam variabel masing - masing ($user1, $user2, $user3)
+$user1->aksesFitur(): Memanggil metode aksesFitur() pada masing - masing objek untuk mencetak pesan ke layar.
+
+### Hasil
+![image](https://github.com/user-attachments/assets/ec2145c2-6556-477a-8bc3-d210d69e8373)
+
+
+## Abstract
+### Kelas Pengguna dan Method
+![image](https://github.com/user-attachments/assets/66ecfd0a-71c9-4be5-8e70-953857e0ec8e)
+
+Mendefinisikan kelas Pengguna sebagai parent untuk kelas turunan selanjutnya
+Function aksesFitur(): Metode kosong untuk diisi oleh kelas turunannya.
+
+### Kelas Dosen dan Method
+![image](https://github.com/user-attachments/assets/6f6a66d2-4d33-4772-bcdc-4f34686e7c2d)
+
+Mendefinisikan kelas Dosen yang merupakan turunan dari kelas Pengguna
+Function aksesFitur(): mengoverride metode akses fitur dari parent untuk diisi "Lu adalah dosen".
+
+### Kelas Mahasiswa dan Method
+![image](https://github.com/user-attachments/assets/05e6cace-a23d-48f8-8d55-d723e4d43608)
+
+Mendefinisikan kelas Mahasiswa yang merupakan turunan dari kelas Pengguna
+Function aksesFitur(): mengoverride metode akses fitur dari parent untuk diisi "Lu adalah mahasiswa".
+
+### Hasil
+![image](https://github.com/user-attachments/assets/f1cb8148-d2c5-4180-8621-8706456856fe)
 
