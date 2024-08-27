@@ -1,5 +1,4 @@
-﻿# Dokumentasi Projek
-﻿# Pertemuan1-2 ﻿Praktikum_Web2
+﻿# Dokumentasi Projek Pertemuan 1 dan 2
 
 ## Pendahuluan
 Object-Oriented Programming (OOP) adalah paradigma pemrograman yang
@@ -50,6 +49,10 @@ Return: Mengembalikan sebuah string yang berisi judul dan penulis buku.
 $buku1 = new Buku(...): Membuat objek baru dari kelas Buku dengan judul "Pemrograman PHP" dan penulis "Andi Prasetyo". Objek ini disimpan dalam variabel $buku1.
 echo $buku1->tampilkanInfo();: Memanggil metode tampilkanInfo() pada objek $buku1 dan mencetak hasilnya ke layar.
 
+### Hasil
+![image](https://github.com/user-attachments/assets/09b73318-dc1d-4cbe-87ce-5c1cab6cdd9f)
+
+
 ## Encapsulation
 
 ### Definisi kelas
@@ -99,6 +102,8 @@ function : Metode ini digunakan untuk mengubah nilai dari atribut $judul (setter
 $buku1 = new Buku(...) : Membuat objek baru yang disimpan di dalam variabel $buku1
 echo $buku1->getJudul();: Memanggil metode getJudul() pada objek $buku1 untuk mendapatkan nilai judul buku dan kemudian mencetaknya ke layar.
 
+### Hasil
+![image](https://github.com/user-attachments/assets/21275489-6abc-4be3-973f-38b2f0e85b7b)
 
 
 
@@ -126,18 +131,27 @@ getPenulis(): Metode getter untuk mendapatkan nilai dari atribut $penulis.
 $buku1 = new Buku("Pemrograman PHP", "Andi Prasetyo");: Membuat objek baru dari kelas Buku dengan judul "Pemrograman PHP" dan penulis "Andi Prasetyo".
 echo $buku1->getNama();: Memanggil metode getNama() pada objek $buku1 untuk mendapatkan nilai judul buku (yang diwarisi dari kelas Produk) dan kemudian mencetaknya ke layar.
 
+### Hasil
+![image](https://github.com/user-attachments/assets/15b1f1d8-48ed-47c1-9cc2-6c9c943ea496)
 
-# Jobsheet
+
+# Jobsheet 2
 ## Class & Object
 ### Class 
+![image](https://github.com/user-attachments/assets/4f509e8b-5028-46af-b851-11adea3d88f7)
+
 class Mahasiswa: Mendefinisikan sebuah kelas baru dengan nama Mahasiswa. Kelas ini menjadi blueprint atau cetak biru untuk membuat objek-objek yang merepresentasikan data mahasiswa.
 
 ### Atribut (Properties)
+![image](https://github.com/user-attachments/assets/04c36aea-bd96-4233-bba1-0fe2d917ae54)
+
 $nama: Atribut publik yang digunakan untuk menyimpan nama mahasiswa.
 $nim: Atribut publik yang digunakan untuk menyimpan Nomor Induk Mahasiswa.
 $jurusan: Atribut publik yang digunakan untuk menyimpan jurusan mahasiswa.
 
 ### Constructor
+![image](https://github.com/user-attachments/assets/aa1ec153-7c14-4201-a000-a1b30ded105c)
+
 __construct(): Metode khusus yang secara otomatis dipanggil ketika objek Mahasiswa baru dibuat.
 Parameter:
 $nama: Nilai yang akan diberikan kepada atribut $nama.
@@ -146,9 +160,13 @@ $jurusan: Nilai yang akan diberikan kepada atribut $jurusan.
 Function: Menginisialisasi objek Mahasiswa dengan nilai-nilai yang diberikan saat objek dibuat.
 
 ### Method 
+![image](https://github.com/user-attachments/assets/39a312ce-2bdf-4c7a-95f1-0d1c04e6d29c)
+
 Function: Metode ini digunakan untuk menampilkan data mahasiswa dalam bentuk string.
 
 ### Membuat Objek dan Mengaksesnya
+![image](https://github.com/user-attachments/assets/dcec7d65-5c7b-49a8-aa44-b4b1271fa510)
+
 $mahasiswa1 = new Mahasiswa(...): Membuat objek baru dari kelas Mahasiswa dengan nama "Eval", NIM "23020202009", dan jurusan "Jurusan Komputer dan Bisnis". Objek ini disimpan dalam variabel $mahasiswa1.
 echo $mahasiswa1->tampilkanData();: Memanggil metode tampilkanData() pada objek $mahasiswa1 untuk menampilkan data mahasiswa ke layar.
 
@@ -159,12 +177,18 @@ echo $mahasiswa1->tampilkanData();: Memanggil metode tampilkanData() pada objek 
 
 ## Encapsulation
 ### Definisi Kelas
+![image](https://github.com/user-attachments/assets/616398ca-3cbe-4767-bee3-5f994331c0e3)
+
 class Mahasiswa: Mendefinisikan sebuah kelas baru dengan nama Mahasiswa. Kelas ini menjadi blueprint atau cetak biru untuk membuat objek-objek yang merepresentasikan data mahasiswa.
 
 ### Atribut (Properties)
+![image](https://github.com/user-attachments/assets/585f93b0-a6f0-4453-95cb-890e65a20c53)
+
 private $nama, private $nim, private $jurusan: Atribut-atribut ini memiliki visibilitas private. Artinya, atribut ini hanya dapat diakses dari dalam kelas Mahasiswa itu sendiri.
 
 ### Constructor
+![image](https://github.com/user-attachments/assets/b2d6cd02-c477-4270-9134-0e9db9a0ed11)
+
 __construct(): Metode khusus yang secara otomatis dipanggil ketika objek Mahasiswa baru dibuat.
 Parameter:
 $nama: Nilai yang akan diberikan kepada atribut $nama.
@@ -173,10 +197,14 @@ $jurusan: Nilai yang akan diberikan kepada atribut $jurusan.
 Function: Menginisialisasi objek Mahasiswa dengan nilai-nilai yang diberikan saat objek dibuat.
 
 ### Method getter & setter
+![image](https://github.com/user-attachments/assets/5e637462-f64f-4521-a19d-49de9deef2c8)
+
 getNama(), getNim(), getJurusan(): Metode-metode ini adalah getter yang digunakan untuk mendapatkan nilai dari atribut-atribut yang sesuai.
 setNama(), setNim(), setJurusan(): Metode-metode ini adalah setter yang digunakan untuk mengubah nilai dari atribut-atribut yang sesuai.
 
 ###  Membuat Objek dan Mengaksesnya
+![image](https://github.com/user-attachments/assets/198364da-9da3-46ff-bb14-4554912da6a9)
+
 $mahasiswa1 = new Mahasiswa(...): Membuat objek baru dari kelas Mahasiswa dengan nama "Eval", NIM "230202009", dan jurusan "Komputer dan Bisnis". Objek ini disimpan dalam variabel $mahasiswa1.
 echo $mahasiswa1->getNama();: Memanggil metode getNama() pada objek $mahasiswa1 untuk mendapatkan nilai nama mahasiswa dan kemudian mencetaknya ke layar.
 
