@@ -502,56 +502,259 @@ echo $dosen1->tampilkanDosen();
 
 # Pertemuan 5 dan 6
 ## Jobsheet 3
-### Kelas Person
 ```php
+<?php 
 // Kelas dasar Person yang memiliki properti private $name.
 class Person {
-  private $name;
-```
-Merupakan kelas dasar yang merepresentasikan seseorang secara umum.
+  private $name; // Properti private $name.
 
-### Method
-```php
-// Konstruktor kelas Person (saat ini tidak menerima parameter apapun).
+  // Konstruktor kelas Person (saat ini tidak menerima parameter apapun).
   public function __construct() {
 
   }
-```
-Konstruktor untuk inisialisasi objek.
-```php
+
   // Method untuk mendapatkan nilai $name.
   public function getName() {
-    return $this->name;
+    return $this->name; // Mengembalikan nilai $name.
   }
-```
-Mengembalikan nama seseorang.
-```php
+
   // Method untuk mengatur nilai $name.
   public function setName($name) {
-    $this->name = $name;
+    $this->name = $name; // Mengatur nilai $name.
   }
-```
-Mengatur nama seseorang.
-```php
+
   // Method untuk mendapatkan peran (role) secara umum.
   public function getRole() {
-    return "gw adalah ";
+    return "gw adalah "; // Mengembalikan peran (role)
   }
-```
-Mengembalikan peran umum seseorang (akan di-override pada kelas turunan).
+}
 
-### Kelas Student Teacher Mahasiswa Dosen
-```php
+// Kelas Student yang mewarisi dari Person, memiliki properti tambahan $studentID.
 class Student extends Person {
-  private $studentID;
-```
-Kelas Student mewarisi dari kelas Person dan menambahkan properti studentID.
+  private $studentID; // Properti private $studentID.
 
-### Construct
-```php
-// Konstruktor yang menerima $name dan $studentID, lalu menginisialisasinya.
+  // Konstruktor yang menerima $name dan $studentID, lalu menginisialisasinya.
   public function __construct($name, $studentID) {
     parent::setName($name); // Memanggil setName dari kelas induk (Person).
-    $this->studentID = $studentID;
+    $this->studentID = $studentID; // Mengatur $studentID
   }
+
+  // Method untuk mendapatkan nilai $studentID.
+  public function getStudentID() {
+    return $this->studentID; // Mengembalikan $studentID
+  }
+
+  // Method untuk mendapatkan nilai $name dari kelas induk.
+  public function getName() {
+    return parent::getName(); // Mengembalikan $name
+  }
+
+  // Method untuk mengatur nilai $name melalui method dari kelas induk.
+  public function setName($name) {
+    parent::setName($name); // Mengatur $name
+  }
+
+  // Method untuk mengatur nilai $studentID.
+  public function setStudentID($studentID) {
+    $this->studentID = $studentID;  // Mengatur $studentID
+  }
+}
+
+// Kelas Teacher yang mewarisi dari Person, memiliki properti tambahan $teacherID.
+class Teacher extends Person {
+  public $teacherID; // Properti public $teacherID.
+  
+  // Konstruktor yang menerima $nama dan $teacherID, lalu menginisialisasinya.
+  public function __construct($nama, $teacherID) {
+    parent::setName($nama); // Memanggil setName dari kelas induk.
+    $this->teacherID = $teacherID;
+  }
+
+  // Method untuk mengatur nilai $teacherID.
+  public function setTeacherID($teacherID){
+    $this->teacherID = $teacherID; // Mengatur $teacherID
+  }
+
+  // Method untuk mendapatkan nilai $teacherID.
+  public function getTeacherID() {
+    return $this->teacherID; // Mengembalikan $teacherID
+  }
+
+  // Method untuk mendapatkan nilai $name dari kelas induk.
+  public function getName() {
+    return parent::getName(); // Mengembalikan $name
+  }
+
+  // Method untuk mengatur nilai $name melalui method dari kelas induk.
+  public function setName($name) {
+    parent::setName($name); // Mengatur $name
+  }
+}
+
+// Kelas abstrak Course yang berfungsi sebagai template untuk kelas lainnya.
+abstract class Course {
+  // Method abstrak yang harus diimplementasikan oleh kelas turunan.
+  abstract public function getCourseDetail(); // Method yang harus diimplementasikan.
+}
+
+// Kelas OnlineCourse yang mengimplementasikan Course.
+class OnlineCourse extends Course {
+  // Implementasi method getCourseDetail untuk course online.
+  public function getCourseDetail() {
+    return "course detail online"; // Mengembalikan "course detail online".
+  }
+}
+
+// Kelas OfflineCourse yang mengimplementasikan Course.
+class OfflineCourse extends Course {
+  // Implementasi method getCourseDetail untuk course offline.
+  public function getCourseDetail() {
+    return "course detail offline"; // Mengembalikan "course detail offline".
+  }
+}
+
+// Kelas Dosen yang mewarisi dari Person, memiliki properti tambahan $nidn.
+class Dosen extends Person { 
+  private $nidn; // Properti private $nidn.
+
+  // Konstruktor yang menerima $name dan $nidn, lalu menginisialisasinya.
+  public function __construct($name, $nidn) {
+    parent::setName($name); // Memanggil setName dari kelas induk.
+    $this->nidn = $nidn; // Mengatur $nidn
+  }
+
+  // Method untuk mendapatkan nilai $name dari kelas induk.
+  public function getName() {
+    return parent::getName(); // Mengembalikan $name
+  }
+
+  // Method untuk mengatur nilai $name melalui method dari kelas induk.
+  public function setName($name) {
+    parent::setName($name); // Mengatur $name
+  }
+
+  // Method untuk mengatur nilai $nidn.
+  public function setNidn($nidn) {
+    $this->nidn = $nidn; // Mengatur $nidn
+  }
+
+  // Method untuk mendapatkan nilai $nidn.
+  public function getNidn() {
+    return $this->nidn; // Mengembalikan $nidn
+  }
+
+  // Method untuk mendapatkan role khusus untuk dosen.
+  public function getRole() {
+    return "gw adalah dosen"; // Mengembalikan "gw adalah dosen"
+  }
+}
+
+// Kelas Mahasiswa yang mewarisi dari Person, memiliki properti tambahan $nim.
+class Mahasiswa extends Person {
+  private $nim; // Properti private $nim.
+
+  // Konstruktor yang menerima $name dan $nim, lalu menginisialisasinya.
+  public function __construct($name, $nim) {
+    parent::setName($name); // Memanggil setName dari kelas induk.
+    $this->nim = $nim; // Mengatur $nim
+  }
+
+  // Method untuk mendapatkan nilai $name dari kelas induk.
+  public function getName() {
+    return parent::getName(); // Mengembalikan $name
+  }
+
+  // Method untuk mengatur nilai $nim.
+  public function setNim($nim) {
+    $this->nim = $nim; // Mengatur $nim
+  }
+
+  // Method untuk mendapatkan nilai $nim.
+  public function getNim() {
+    return $this->nim; // Mengembalikan $nim
+  }
+
+  // Method untuk mendapatkan role khusus untuk mahasiswa.
+  public function getRole() {
+    return "gw adalah mahasiswa"; //  Mengembalikan "gw adalah mahasiswa"
+  }
+}
+
+// Kelas abstrak Jurnal yang berfungsi sebagai template untuk kelas lainnya.
+abstract class Jurnal {
+  // Method abstrak yang harus diimplementasikan oleh kelas turunan.
+  abstract function caraPengajuan(); // Method yang harus diimplementasikan.
+}
+
+// Kelas JurnalDosen yang mengimplementasikan Jurnal.
+class JurnalDosen extends Jurnal {
+  // Implementasi method caraPengajuan khusus untuk jurnal dosen.
+  public function caraPengajuan(){
+    return "cara pengajuan jurnal dosen"; // Mengembalikan "cara pengajuan jurnal dosen"
+  }
+} 
+
+// Kelas JurnalMahasiswa yang mengimplementasikan Jurnal.
+class JurnalMahasiswa extends Jurnal {
+  // Implementasi method caraPengajuan khusus untuk jurnal mahasiswa.
+  public function caraPengajuan(){
+    return "cara pengajuan jurnal mahasiswa"; // Mengembalikan "cara pengajuan jurnal mahasiswa"
+  }
+}
+
+// Membuat objek Student dan menampilkan informasi.
+$student = new Student("Eval", "230202009"); // Memanggil konstruktor
+echo $student->getName() . "<br>"; // Memanggil method
+echo $student->getStudentID() . "<br>"; 
+echo $student->setName("Eval Kece"); 
+echo $student->setStudentID("230202010") . "<br>"; 
+echo $student->getName() . "<br>";
+echo $student->getStudentID() . "<br><br>";
+
+// Membuat objek Teacher dan menampilkan informasi.
+$teacher = new Teacher("Cahya", "77653"); // Memanggil konstruktor
+echo $teacher->getName() . "<br>";  // Memanggil method
+echo $teacher->getTeacherID() . "<br>";
+echo $teacher->setName("Oura");
+echo $teacher->setTeacherID("885774") . "<br>";
+echo $teacher->getName() . "<br>";
+echo $teacher->getTeacherID() . "<br><br>";
+
+// Membuat objek OnlineCourse dan OfflineCourse lalu menampilkan detailnya.
+$course = new OnlineCourse();
+echo $course->getCourseDetail() . "<br>";
+
+$course = new OfflineCourse();
+echo $course->getCourseDetail() . "<br><br>";
+
+// Membuat objek Dosen dan menampilkan informasi.
+$dosen = new Dosen("Adi", "12345");
+echo $dosen->getName() . "<br>";
+echo $dosen->getRole() . "<br>";
+echo $dosen->getNidn() . "<br>";
+echo $dosen->setNidn("54332") . "<br>";
+echo $dosen->setName("Adiansyah") . "<br>";
+echo $dosen->getName() . "<br>";
+echo $dosen->getRole() . "<br>";
+echo $dosen->getNidn() . "<br><br>";
+
+// Membuat objek Mahasiswa dan menampilkan informasi.
+$mahasiswa = new Mahasiswa("Eval", "230202009");
+echo $mahasiswa->getName() . "<br>";
+echo $mahasiswa->getRole() . "<br>";
+echo $mahasiswa->getNim() . "<br><br>";
+$mahasiswa->setName("Eval Kece");
+$mahasiswa->setNim("230202010");
+echo $mahasiswa->getName() . "<br>";
+echo $mahasiswa->getRole() . "<br>";
+echo $mahasiswa->getNim() . "<br><br>";
+
+// Membuat objek JurnalDosen dan JurnalMahasiswa lalu menampilkan cara pengajuannya.
+$jDosen = new JurnalDosen();
+echo $jDosen->caraPengajuan() . "<br>";
+$jMahasiswa = new JurnalMahasiswa();
+echo $jMahasiswa->caraPengajuan() . "<br><br>"; 
+?>
 ```
+### Hasil
+![image](https://github.com/user-attachments/assets/307631fb-fedd-4baf-8614-fb23bf641839)
