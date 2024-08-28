@@ -458,3 +458,100 @@ echo $mahasiswa1->tampildata(); //memamnggil method tampildata dari objek mahasi
 
 
 ## Tugas
+### Class and Properties
+```php
+// Properties (atribut dari objek)
+  public $nama;         // Nama dosen
+  public $nip;          // NIP (Nomor Induk Pegawai) dosen
+  public $mataKuliah;   // Mata kuliah yang diajarkan dosen
+```
+Mencdefinisikan kelas bernama Dosen dengan atribut nama, nip dan mata kuliah
+
+### Constructor
+```php
+ // Constructor untuk menginisialisasi objek Dosen dengan nilai properti
+  public function __construct($nama, $nip, $mataKuliah) {
+    // Mengatur nilai properti saat objek dibuat
+    $this->nama = $nama;
+    $this->nip = $nip;
+    $this->mataKuliah = $mataKuliah;
+```
+Membentuk objek Dosen baru dengan inisialisasi nilai untuk nama, NIP, dan mata kuliah.
+
+### Method
+```php
+ // Method untuk menampilkan data dosen
+  public function tampilkanDosen() {
+    // Mengembalikan string yang berisi informasi dosen
+    return "Nama : $this->nama <br> NIP : $this->nip <br> Mata Kuliah : $this->mataKuliah"; 
+  }
+```
+Mengembalikan string yang berisi informasi lengkap tentang dosen, termasuk nama, NIP, dan mata kuliah.
+
+### Membentuk Objek dan Mengaksesnya
+```php
+// Instansiasi objek Dosen dengan nama, NIP, dan mata kuliah yang diajarkan
+$dosen1 = new Dosen("Eval", "230200209", "Alpro");
+
+// Menampilkan data dosen dengan memanggil method tampilkanDosen()
+echo $dosen1->tampilkanDosen();
+```
+
+### Hasil
+![image](https://github.com/user-attachments/assets/76e3c0bc-4832-4cfa-94c2-65ff8a2cde85)
+
+# Pertemuan 5 dan 6
+## Jobsheet 3
+### Kelas Person
+```php
+// Kelas dasar Person yang memiliki properti private $name.
+class Person {
+  private $name;
+```
+Merupakan kelas dasar yang merepresentasikan seseorang secara umum.
+
+### Method
+```php
+// Konstruktor kelas Person (saat ini tidak menerima parameter apapun).
+  public function __construct() {
+
+  }
+```
+Konstruktor untuk inisialisasi objek.
+```php
+  // Method untuk mendapatkan nilai $name.
+  public function getName() {
+    return $this->name;
+  }
+```
+Mengembalikan nama seseorang.
+```php
+  // Method untuk mengatur nilai $name.
+  public function setName($name) {
+    $this->name = $name;
+  }
+```
+Mengatur nama seseorang.
+```php
+  // Method untuk mendapatkan peran (role) secara umum.
+  public function getRole() {
+    return "gw adalah ";
+  }
+```
+Mengembalikan peran umum seseorang (akan di-override pada kelas turunan).
+
+### Kelas Student Teacher Mahasiswa Dosen
+```php
+class Student extends Person {
+  private $studentID;
+```
+Kelas Student mewarisi dari kelas Person dan menambahkan properti studentID.
+
+### Construct
+```php
+// Konstruktor yang menerima $name dan $studentID, lalu menginisialisasinya.
+  public function __construct($name, $studentID) {
+    parent::setName($name); // Memanggil setName dari kelas induk (Person).
+    $this->studentID = $studentID;
+  }
+```
